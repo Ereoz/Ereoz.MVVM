@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0-windows;net40</TargetFrameworks>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PackageId>Ereoz.MVVM</PackageId>
+		<Title>MVVM</Title>
+		<Authors>Ereoz</Authors>
+		<Description>MVVM services</Description>
+		<Copyright>Denis Plotnikov</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/Ereoz/Ereoz.MVVM</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Ereoz/Ereoz.MVVM</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<UseWPF>true</UseWPF>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md" Pack="true" PackagePath="." />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Ereoz.Abstractions" Version="0.*" />
+		<PackageReference Include="Ereoz.WindowManagement" Version="0.*" />
+	</ItemGroup>
+
+</Project>
