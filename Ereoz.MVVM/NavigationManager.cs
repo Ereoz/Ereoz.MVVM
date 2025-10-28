@@ -44,26 +44,8 @@ namespace Ereoz.MVVM
             return AsSingletone;
         }
 
-        public void AutoRegisterAllViewsWithViewModels()
+        public void AutoRegisterAllViewsWithViewModels(List<Type> allTypes)
         {
-            var allTypes = AppDomain.CurrentDomain
-                .GetAssemblies()
-                .SelectMany(assembly => assembly.GetTypes())
-                .Where(type => !type.FullName.StartsWith("System")
-                            && !type.FullName.StartsWith("Microsoft")
-                            && !type.FullName.StartsWith("Windows")
-                            && !type.FullName.StartsWith("Interop")
-                            && !type.FullName.StartsWith("Internal")
-                            && !type.FullName.StartsWith("StartupHook")
-                            && !type.FullName.StartsWith("FxResources")
-                            && !type.FullName.StartsWith("ThisAssembly")
-                            && !type.FullName.StartsWith("FXAssembly")
-                            && !type.FullName.StartsWith("AssemblyRef")
-                            && !type.FullName.StartsWith("MatchState")
-                            && !type.FullName.StartsWith("EmptyArray")
-                            && !type.FullName.StartsWith("<")
-                            && !type.FullName.StartsWith("_"));
-
             var views = allTypes
                 .Where(t => t.IsSubclassOf(typeof(UserControl))
                          || t.IsSubclassOf(typeof(Page))
