@@ -23,7 +23,6 @@ namespace Ereoz.MVVM
         public NavigationManager(IServiceContainer container)
         {
             _container = container;
-            _container.Register<INavigationManager, NavigationManager>().AsSingletone(this);
             _views = new Dictionary<Type, Type>();
             _viewModels = new Dictionary<Type, Type>();
         }
